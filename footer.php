@@ -10,10 +10,11 @@
  */
 
 ?>
+    </div><!-- .row -->
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer container" role="contentinfo">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'buntu' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'buntu' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

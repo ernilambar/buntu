@@ -6,12 +6,10 @@
  *
  * @package Buntu
  */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
 
-<div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<div id="secondary" class="widget-area col-sm-4" role="complementary">
+  <?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
+    <?php dynamic_sidebar( 'sidebar-1' ); ?>
+  <?php endif ?>
 </div><!-- #secondary -->

@@ -115,9 +115,9 @@ add_action( 'widgets_init', 'buntu_widgets_init' );
  */
 function buntu_scripts() {
 
-	wp_enqueue_style( 'buntu-bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.5', true );
+	wp_enqueue_style( 'buntu-bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.5' );
 
-  wp_enqueue_style( 'buntu-style', get_stylesheet_uri(), array( 'buntu-bootstrap' ) );
+  wp_enqueue_style( 'buntu-style', get_stylesheet_uri() );
 
   wp_enqueue_script( 'buntu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
