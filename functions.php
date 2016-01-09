@@ -41,7 +41,7 @@ function buntu_custom_header() {
             'height'                 => 400,
             'flex-width'             => true,
             'flex-height'            => true,
-            'default-text-color'     => '252525',
+            'default-text-color'     => '230d5b',
             'header-text'            => true,
             'uploads'                => true,
             'wp-head-callback'       => 'stargazer_custom_header_wp_head'
