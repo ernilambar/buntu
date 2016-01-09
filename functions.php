@@ -50,3 +50,10 @@ function buntu_custom_header() {
 }
 
 add_action( 'after_setup_theme', 'buntu_custom_header' );
+
+function buntu_background_color( $color ) {
+    $color = '6b269d';
+    return $color;
+}
+
+add_filter( 'theme_mod_background_color', 'buntu_background_color' );
