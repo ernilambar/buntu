@@ -39,3 +39,37 @@ Version:        1.0
         text-align: center;
     }
 }
+
+.scrollup::before {
+    display:        inline-block;
+    font-family:    'Genericons';
+    font-size:      35px;
+    font-style:     normal;
+    font-weight:    normal;
+    font-variant:   normal;
+    line-height:    1;
+    vertical-align: middle;
+    content: '\f432';
+    -webkit-font-smoothing: antialiased;
+}
+.scrollup:hover::before {
+    color: #FFFFFF;
+}
+.scrollup,
+.scrollup:focus,
+.scrollup:active {
+    background-color: #3d3d3d;
+    border-radius: 5px;
+    bottom: 70px;
+    color: #ffffff;
+    display: none;
+    float: right;
+    line-height: 1.2;
+    padding: 5px;
+    position: fixed;
+    right: 32px;
+    text-align: center;
+}
+
+a:hover{
+}
