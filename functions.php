@@ -20,7 +20,7 @@ function buntu_theme_setup() {
 
 }
 
-add_action( 'after_setup_theme', 'buntu_theme_setup', 99 );
+add_action( 'after_setup_theme', 'buntu_theme_setup', 20 );
 
 function buntu_color_primary_default( $color ) {
     $color = '230d5b';
@@ -57,3 +57,14 @@ function buntu_background_color( $color ) {
 }
 
 add_filter( 'theme_mod_background_color', 'buntu_background_color' );
+
+function buntu_register_menus() {
+
+    register_nav_menu( 'primary',   _x( 'Primary',   'nav menu location', 'buntu' ) );
+    register_nav_menu( 'secondary', _x( 'Secondary', 'nav menu location', 'buntu' ) );
+    register_nav_menu( 'footer',    _x( 'Footer',    'nav menu location', 'buntu' ) );
+    register_nav_menu( 'social',    _x( 'Social',    'nav menu location', 'buntu' ) );
+
+}
+
+add_action( 'init', 'buntu_register_menus', 1 );
