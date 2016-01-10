@@ -15,6 +15,7 @@ function buntu_theme_setup() {
     unregister_default_headers( array(
         'horizon',
         'orange-burn',
+        'planets-blue',
         'planet-burst',
         'space-splatters',
     ) );
@@ -35,7 +36,7 @@ function buntu_custom_header() {
     add_theme_support(
         'custom-header',
         array(
-            'default-image'          => '%s/images/headers/planets-blue.jpg',
+            'default-image'          => '%2$s/images/headers/beautiful-model.jpg',
             'random-default'         => false,
             'width'                  => 1175,
             'height'                 => 400,
@@ -47,6 +48,14 @@ function buntu_custom_header() {
             'wp-head-callback'       => 'stargazer_custom_header_wp_head'
         )
     );
+    register_default_headers( array(
+    	'beautiful-model' => array(
+    		'url'           => '%2$s/images/headers/beautiful-model.jpg',
+    		'thumbnail_url' => '%2$s/images/headers/beautiful-model-thumb.jpg',
+    		// Translators: Header image description.
+    		'description'   => __( 'Beautiful Model', 'buntu' ),
+		),
+	) );
 
 }
 
