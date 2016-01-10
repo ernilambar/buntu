@@ -1,11 +1,20 @@
 /*
 Theme Name:     Buntu
 Theme URI:
-Description:    Child theme of Stargazer.
-Author:         Nilambar
-Author URI:
+Description:    Simple blogging theme derived from Stargazer.
+Author:         Nilambar Sharma
+Author URI:     http://www.nilambar.net
 Template:       stargazer
 Version:        1.0
+Text Domain:    buntu
+License:        GPLv2 or later
+License URI:    http://www.gnu.org/licenses/gpl-2.0.html
+Tags:           purple, white, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, left-sidebar, post-formats, responsive-layout, right-sidebar, rtl-language-support, theme-options, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+This theme is child theme of Stargazer parent theme.
 */
 
 .entry-title, .entry-title a {
