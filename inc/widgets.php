@@ -58,6 +58,7 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
         function widget( $args, $instance ) {
 
             $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+            $size  = ! empty( $instance['size'] ) ? $instance['size'] : 'medium';
 
             echo $args['before_widget'];
 
@@ -76,7 +77,7 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
                 $menu_items = wp_get_nav_menu_items( $menu_id );
 
                 if ( ! empty( $menu_items ) ) {
-                    echo '<ul class="size-medium">';
+                    echo '<ul class="size-' . esc_attr( $size ) . '">';
                     foreach ( $menu_items as $m_key => $m ) {
                         echo '<li>';
                         echo '<a href="' . esc_url( $m->url ) . '" target="_blank">';
@@ -104,7 +105,8 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
         function update( $new_instance, $old_instance ) {
             $instance = $old_instance;
 
-            $instance['title'] = esc_html( strip_tags( $new_instance['title'] ) );
+            $instance['title'] = sanitize_text_field( $new_instance['title'] );
+            $instance['size']  = sanitize_key( $new_instance['size'] );
 
             return $instance;
         }
@@ -121,8 +123,10 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
             // Defaults.
             $instance = wp_parse_args( (array) $instance, array(
                 'title' => '',
+                'size'  => '',
             ) );
             $title = esc_attr( $instance['title'] );
+            $size  = esc_attr( $instance['size'] );
 
             // Fetch navigation.
             $nav_menu_locations = get_nav_menu_locations();
@@ -133,7 +137,19 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
             ?>
           <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'buntu' ); ?></label>
-        <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+          </p>
+          <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>"><?php esc_html_e( 'Size:', 'buntu' ); ?></label>
+            <?php
+              $this->dropdown_size( array(
+                'id'       => $this->get_field_id( 'size' ),
+                'name'     => $this->get_field_name( 'size' ),
+                'selected' => $size,
+                )
+              );
+            ?>
+
           </p>
 
         <?php if ( true !== $is_menu_set ) :  ?>
@@ -143,6 +159,43 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
         <?php endif ?>
         <?php
         }
+
+        function dropdown_size( $args ){
+            $defaults = array(
+                'id'       => '',
+                'name'     => '',
+                'selected' => 0,
+                'echo'     => 1,
+            );
+
+            $r = wp_parse_args( $args, $defaults );
+            $output = '';
+
+            $choices = array(
+                'small'       => __( 'Small', 'buntu' ),
+                'medium'      => __( 'Medium', 'buntu' ),
+                'large'       => __( 'Large', 'buntu' ),
+                'extra-large' => __( 'Extra Large', 'buntu' ),
+            );
+
+            if ( ! empty( $choices ) ) {
+
+                $output = "<select name='" . esc_attr( $r['name'] ) . "' id='" . esc_attr( $r['id'] ) . "'>\n";
+                foreach ( $choices as $key => $choice ) {
+                    $output .= '<option value="' . esc_attr( $key ) . '" ';
+                    $output .= selected( $r['selected'], $key, false );
+                    $output .= '>' . esc_html( $choice ) . '</option>\n';
+                }
+                $output .= "</select>\n";
+            }
+
+            if ( $r['echo'] ) {
+                echo $output;
+            }
+            return $output;
+
+        }
+
     }
 
 endif;
