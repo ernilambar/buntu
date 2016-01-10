@@ -9,8 +9,8 @@
 
 	<?php the_posts_pagination(
 		array(
-			'prev_text' => _x( '&larr; Previous', 'posts navigation', 'stargazer' ),
-			'next_text' => _x( 'Next &rarr;',     'posts navigation', 'stargazer' )
+			'prev_text' => _x( '&larr; Previous', 'posts navigation', 'buntu' ),
+			'next_text' => _x( 'Next &rarr;',     'posts navigation', 'buntu' )
 		)
 	); ?>
 
