@@ -95,3 +95,8 @@ if ( ! function_exists( 'buntu_add_goto_top' ) ) :
 endif;
 
 add_action( 'wp_footer', 'buntu_add_goto_top' );
+
+/**
+ * Load widgets.
+ */
+require get_stylesheet_directory() . '/inc/widgets.php';
