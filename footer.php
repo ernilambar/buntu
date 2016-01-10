@@ -10,14 +10,20 @@
 
 			<div class="wrap">
 
-				<p class="credit">
-					<?php printf(
-						// Translators: 1 is current year, 2 is site name/link, 3 is WordPress name/link, and 4 is theme name/link. */
-						__( 'Copyright &#169; %1$s %2$s. Powered by %3$s and %4$s.', 'buntu' ),
-						date_i18n( 'Y' ), hybrid_get_site_link(), hybrid_get_wp_link(), hybrid_get_theme_link()
-					); ?>
-				</p><!-- .credit -->
-
+                <p class="credit">
+                    <?php
+                        printf(
+                            __( 'Copyright &#169; %1$s %2$s.', 'buntu' ),
+                            date_i18n( 'Y' ),
+                            hybrid_get_site_link()
+                        );
+                        printf(
+                            ' ' . __( '%1$s by %2$s.', 'buntu' ),
+                            __( 'Buntu', 'buntu' ),
+                            '<a href="' . esc_url( 'http://www.nilambar.net' ) . '" target="_blank">'. __( 'Nilambar', 'buntu' ) . '</a>'
+                        );
+                    ?>
+                </p><!-- .credit -->
                 <?php
                 wp_nav_menu( array(
                     'theme_location' => 'footer',

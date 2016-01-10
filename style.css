@@ -102,13 +102,22 @@ Version:        1.0
 .buntu_widget_social li a::before {
     display:        inline-block;
     font-family:    'Genericons';
-    font-size:      16px;
+    font-size:      18px;
     font-style:     normal;
     font-weight:    normal;
     font-variant:   normal;
     line-height:    1;
     vertical-align: middle;
     -webkit-font-smoothing: antialiased;
+}
+.buntu_widget_social .size-medium li a::before {
+    font-size: 22px;
+}
+.buntu_widget_social .size-large li a::before {
+    font-size: 28px;
+}
+.buntu_widget_social .size-extra-large li a::before {
+    font-size: 40px;
 }
 .buntu_widget_social ul,
 .ltr .buntu_widget_social ul,
@@ -118,13 +127,14 @@ Version:        1.0
 }
 .buntu_widget_social li {
     display: inline-block;
+    margin-bottom: 3px;
 }
 .buntu_widget_social li a::before        { content: '\f408'; padding: 0 3px; }
 .buntu_widget_social li a:hover::before,
 .buntu_widget_social li a:focus::before  { opacity: 0.75; }
 
-.buntu_widget_social li a[href*="codepen.io"]::before      { content: '\f216'; color: #fff;    }
-.buntu_widget_social li a[href*="digg.com"]::before        { content: '\f221'; color: #fff;    }
+.buntu_widget_social li a[href*="codepen.io"]::before      { content: '\f216'; color: #333;    }
+.buntu_widget_social li a[href*="digg.com"]::before        { content: '\f221'; color: #333;    }
 .buntu_widget_social li a[href*="dribbble.com"]::before    { content: '\f201'; color: #ea4c89; }
 .buntu_widget_social li a[href*="dropbox.com"]::before     { content: '\f225'; color: #007ee5; }
 .buntu_widget_social li a[href*="facebook.com"]::before    { content: '\f203'; color: #3b5998; }
