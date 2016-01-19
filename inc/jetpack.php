@@ -20,7 +20,7 @@ function buntu_jetpack_setup() {
     // Infinite scroll.
     add_theme_support( 'infinite-scroll', array(
         'container'      => 'content',
-        'footer'         => false,
+        'footer'         => '#main',
         'wrapper'        => false,
         'render'         => 'buntu_infinite_scroll_render',
         'footer_widgets' => array( 'subsidiary' ),
