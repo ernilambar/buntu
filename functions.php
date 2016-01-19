@@ -1,59 +1,87 @@
 <?php
+/**
+ * Theme functions and definitions.
+ *
+ * @package Buntu
+ */
 
+/**
+ * Load styles.
+ *
+ * @since 1.0.0
+ */
 function buntu_enqueue_styles() {
 
-    wp_enqueue_style( 'stargazer-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'buntu-style', get_stylesheet_directory_uri() . '/style.css', array('stargazer-style') );
-    wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_style( 'stargazer-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'buntu-style', get_stylesheet_directory_uri() . '/style.css', array( 'stargazer-style' ) );
+	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), '1.0.0', true );
 
 }
 
 add_action( 'wp_enqueue_scripts', 'buntu_enqueue_styles' );
 
+/**
+ * Setup stuffs.
+ *
+ * @since 1.0.0
+ */
 function buntu_theme_setup() {
 
-    unregister_default_headers( array(
-        'horizon',
-        'orange-burn',
-        'planets-blue',
-        'planet-burst',
-        'space-splatters',
-    ) );
+	unregister_default_headers( array(
+		'horizon',
+		'orange-burn',
+		'planets-blue',
+		'planet-burst',
+		'space-splatters',
+	) );
 
 }
 
 add_action( 'after_setup_theme', 'buntu_theme_setup', 20 );
 
+/**
+ * Primary color.
+ *
+ * @since 1.0.0
+ *
+ * @param string $color Primary color value.
+ * @return string Modified color.
+ */
 function buntu_color_primary_default( $color ) {
-    $color = '230d5b';
-    return $color;
+	$color = '230d5b';
+	return $color;
 }
 
 add_filter( 'theme_mod_color_primary', 'buntu_color_primary_default' );
 
+/**
+ * Custom header.
+ *
+ * @since 1.0.0
+ */
 function buntu_custom_header() {
 
-    add_theme_support(
-        'custom-header',
-        array(
-            'default-image'          => '%2$s/images/headers/beautiful-model.jpg',
-            'random-default'         => false,
-            'width'                  => 1175,
-            'height'                 => 400,
-            'flex-width'             => true,
-            'flex-height'            => true,
-            'default-text-color'     => '230d5b',
-            'header-text'            => true,
-            'uploads'                => true,
-            'wp-head-callback'       => 'stargazer_custom_header_wp_head'
-        )
-    );
-    register_default_headers( array(
-    	'beautiful-model' => array(
-    		'url'           => '%2$s/images/headers/beautiful-model.jpg',
-    		'thumbnail_url' => '%2$s/images/headers/beautiful-model-thumb.jpg',
-    		// Translators: Header image description.
-    		'description'   => __( 'Beautiful Model', 'buntu' ),
+	add_theme_support(
+		'custom-header',
+		array(
+			'default-image'          => '%2$s/images/headers/beautiful-model.jpg',
+			'random-default'         => false,
+			'width'                  => 1175,
+			'height'                 => 400,
+			'flex-width'             => true,
+			'flex-height'            => true,
+			'default-text-color'     => '230d5b',
+			'header-text'            => true,
+			'uploads'                => true,
+			'wp-head-callback'       => 'stargazer_custom_header_wp_head',
+		)
+	);
+	register_default_headers( array(
+		'beautiful-model' => array(
+			'url'           => '%2$s/images/headers/beautiful-model.jpg',
+			'thumbnail_url' => '%2$s/images/headers/beautiful-model-thumb.jpg',
+			// Translators: Header image description.
+			'description'   => __( 'Beautiful Model', 'buntu' ),
 		),
 	) );
 
@@ -61,31 +89,32 @@ function buntu_custom_header() {
 
 add_action( 'after_setup_theme', 'buntu_custom_header' );
 
+/**
+ * Register nav menus.
+ *
+ * @since 1.0.0
+ */
 function buntu_register_menus() {
 
-    register_nav_menu( 'primary',   _x( 'Primary',   'nav menu location', 'buntu' ) );
-    register_nav_menu( 'secondary', _x( 'Secondary', 'nav menu location', 'buntu' ) );
-    register_nav_menu( 'footer',    _x( 'Footer',    'nav menu location', 'buntu' ) );
-    register_nav_menu( 'social',    _x( 'Social',    'nav menu location', 'buntu' ) );
+	register_nav_menu( 'primary',   _x( 'Primary',   'nav menu location', 'buntu' ) );
+	register_nav_menu( 'secondary', _x( 'Secondary', 'nav menu location', 'buntu' ) );
+	register_nav_menu( 'footer',    _x( 'Footer',    'nav menu location', 'buntu' ) );
+	register_nav_menu( 'social',    _x( 'Social',    'nav menu location', 'buntu' ) );
 
 }
 
 add_action( 'init', 'buntu_register_menus', 1 );
 
-if ( ! function_exists( 'buntu_add_goto_top' ) ) :
+/**
+ * Go to top.
+ *
+ * @since 1.0.0
+ */
+function buntu_add_goto_top() {
 
-    /**
-     * Go to top.
-     *
-     * @since 1.0.0
-     */
-    function buntu_add_goto_top() {
+	echo '<a href="#container" class="scrollup" id="btn-scrollup"><span class="screen-reader-text">' . esc_html__( 'Go to top', 'buntu' ) . '</span></a>';
 
-        echo '<a href="#container" class="scrollup" id="btn-scrollup"><span class="screen-reader-text">' . __( 'Go to top', 'buntu' ) . '</span></a>';
-
-    }
-
-endif;
+}
 
 add_action( 'wp_footer', 'buntu_add_goto_top' );
 
@@ -100,12 +129,11 @@ require get_stylesheet_directory() . '/inc/widgets.php';
 require get_stylesheet_directory() . '/inc/jetpack.php';
 
 add_action( 'after_setup_theme', 'buntu_custom_background_setup', 10 );
+
 /**
  * Adds support for the WordPress 'custom-background' theme feature.
  *
- * @since  1.0.0
- * @access public
- * @return void
+ * @since 1.0.0
  */
 function buntu_custom_background_setup() {
 
