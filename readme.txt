@@ -24,6 +24,7 @@ Simple blogging theme derived from Stargazer.
 
 = 1.1 =
 * Update: Add default image
+* Update: Minor styling issues
 
 = 1.0 =
 * Initial submission
