@@ -1,7 +1,7 @@
 === Buntu ===
 Contributors: rabmalin
 Tags: purple, white, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, left-sidebar, post-formats, responsive-layout, right-sidebar, rtl-language-support, theme-options, threaded-comments, translation-ready
-Requires at least: 4.1
+Requires at least: 4.2
 Tested up to: 4.4
 Stable tag: 1.0
 License: GPLv2 or later
@@ -18,8 +18,12 @@ Simple blogging theme derived from Stargazer.
 == Images ==
 
 * CCO - https://pixabay.com/en/fashion-beauty-model-portrait-girl-1063100/
+* CCO - https://pixabay.com/en/texture-color-colorful-background-746882/
 
 == Changelog ==
+
+= 1.1 =
+* Update: Add default image
 
 = 1.0 =
 * Initial submission

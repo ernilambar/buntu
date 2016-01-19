@@ -61,13 +61,6 @@ function buntu_custom_header() {
 
 add_action( 'after_setup_theme', 'buntu_custom_header' );
 
-function buntu_background_color( $color ) {
-    $color = '6b269d';
-    return $color;
-}
-
-add_filter( 'theme_mod_background_color', 'buntu_background_color' );
-
 function buntu_register_menus() {
 
     register_nav_menu( 'primary',   _x( 'Primary',   'nav menu location', 'buntu' ) );
@@ -105,3 +98,23 @@ require get_stylesheet_directory() . '/inc/widgets.php';
  * Load Jetpack.
  */
 require get_stylesheet_directory() . '/inc/jetpack.php';
+
+add_action( 'after_setup_theme', 'buntu_custom_background_setup', 10 );
+/**
+ * Adds support for the WordPress 'custom-background' theme feature.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+function buntu_custom_background_setup() {
+
+	add_theme_support(
+		'custom-background',
+		array(
+			'default-color'    => '6b269d',
+			'default-image'    => get_stylesheet_directory_uri() . '/images/bg.jpg',
+			'wp-head-callback' => 'stargazer_custom_background_callback',
+		)
+	);
+}
