@@ -17,14 +17,14 @@
  */
 function buntu_jetpack_setup() {
 
-    // Infinite scroll.
-    add_theme_support( 'infinite-scroll', array(
-        'container'      => 'content',
-        'footer'         => '#main',
-        'wrapper'        => false,
-        'render'         => 'buntu_infinite_scroll_render',
-        'footer_widgets' => array( 'subsidiary' ),
-    ) );
+	// Infinite scroll.
+	add_theme_support( 'infinite-scroll', array(
+		'container'      => 'content',
+		'footer'         => '#main',
+		'wrapper'        => false,
+		'render'         => 'buntu_infinite_scroll_render',
+		'footer_widgets' => array( 'subsidiary' ),
+	) );
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
