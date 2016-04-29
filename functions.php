@@ -12,9 +12,11 @@
  */
 function buntu_enqueue_styles() {
 
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
 	wp_enqueue_style( 'stargazer-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'buntu-style', get_stylesheet_directory_uri() . '/style.css', array( 'stargazer-style' ) );
-	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.0.0', true );
 
 }
 
@@ -128,7 +130,6 @@ require get_stylesheet_directory() . '/inc/widgets.php';
  */
 require get_stylesheet_directory() . '/inc/jetpack.php';
 
-add_action( 'after_setup_theme', 'buntu_custom_background_setup', 10 );
 
 /**
  * Adds support for the WordPress 'custom-background' theme feature.
@@ -146,3 +147,5 @@ function buntu_custom_background_setup() {
 		)
 	);
 }
+
+add_action( 'after_setup_theme', 'buntu_custom_background_setup', 10 );
