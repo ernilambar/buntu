@@ -1,9 +1,9 @@
 === Buntu ===
 Contributors: rabmalin
 Tags: purple, white, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, left-sidebar, post-formats, responsive-layout, right-sidebar, rtl-language-support, theme-options, threaded-comments, translation-ready
-Requires at least: 4.2
-Tested up to: 4.4
-Stable tag: 1.2
+Requires at least: 4.3
+Tested up to: 4.5
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
