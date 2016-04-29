@@ -21,6 +21,11 @@ This theme is child theme of Stargazer parent theme.
     color: #230d5b;
 }
 
+.custom-logo-link {
+	float: left;
+	margin: 15px 15px 0 0;
+}
+
 .layout-1c #footer .credit,
 .layout-2c-l #footer .credit,
 .layout-2c-r #footer .credit {
@@ -204,3 +209,4 @@ This theme is child theme of Stargazer parent theme.
 .infinite-loader {
     margin-bottom: 20px;
 }
+

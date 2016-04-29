@@ -23,6 +23,7 @@ Buntu is a clean, responsive and minimal theme for your awesome WordPress websit
 == Changelog ==
 
 = 1.3 =
+* Add Custom Logo support
 * Minor styling issues
 
 = 1.2 =
