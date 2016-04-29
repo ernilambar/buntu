@@ -16,7 +16,7 @@ function buntu_enqueue_styles() {
 
 	wp_enqueue_style( 'stargazer-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'buntu-style', get_stylesheet_directory_uri() . '/style.css', array( 'stargazer-style' ) );
-	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.3', true );
 
 }
 
@@ -44,6 +44,11 @@ function buntu_theme_setup() {
 		'width'  => 100,
 		'height' => 100,
 	) );
+
+	/*
+	 * Make theme available for translation.
+	 */
+	load_child_theme_textdomain( 'buntu' );
 
 }
 

@@ -35,13 +35,17 @@ msgstr ""
 msgid "Nilambar"
 msgstr ""
 
-#: functions.php:84
+#: functions.php:99
 #. Translators: Header image description.
 msgid "Beautiful Model"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:130
 msgid "Go to top"
+msgstr ""
+
+#: header.php:13
+msgid "Skip to content"
 msgstr ""
 
 #: inc/widgets.php:44
@@ -98,22 +102,22 @@ msgstr ""
 msgid "http://www.nilambar.net"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:114
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:115
 msgctxt "nav menu location"
 msgid "Secondary"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:116
 msgctxt "nav menu location"
 msgid "Footer"
 msgstr ""
 
-#: functions.php:102
+#: functions.php:117
 msgctxt "nav menu location"
 msgid "Social"
 msgstr ""

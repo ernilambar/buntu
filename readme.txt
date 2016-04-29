@@ -12,6 +12,12 @@ A simple blogging theme.
 == Description ==
 Buntu is a clean, responsive and minimal theme for your awesome WordPress website. This theme is derived from Stargazer.
 
+== License ==
+Buntu WordPress Theme, Copyright 2016 Nilambar Sharma
+Buntu WordPress Theme is distributed under the terms of the GNU GPL.
+Buntu WordPress Theme is derived from Stargazer WordPress Theme, Copyright 2016 Justin Tadlock
+Stargazer WordPress Theme is distributed under the terms of the GNU GPL
+
 == Credits ==
 * GPLv2 or later - This theme is derived from Stargazer theme. http://themehybrid.com/themes/stargazer
 
