@@ -27,7 +27,7 @@ module.exports = function( grunt ){
 					exclude: ['deploy/.*','node_modules/.*'],
 					updateTimestamp: false,
 					potHeaders: {
-						'report-msgid-bugs-to': '',
+						'report-msgid-bugs-to': 'https://github.com/ernilambar/buntu/issues',
 						'x-poedit-keywordslist': true,
 						'language-team': '',
 						'Language': 'en_US',
