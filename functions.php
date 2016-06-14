@@ -14,8 +14,6 @@ function buntu_enqueue_styles() {
 
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_style( 'stargazer-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'buntu-style', get_stylesheet_directory_uri() . '/style.css', array( 'stargazer-style' ) );
 	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.3', true );
 
 }
@@ -45,11 +43,6 @@ function buntu_theme_setup() {
 		'height' => 100,
 	) );
 
-	/*
-	 * Make theme available for translation.
-	 */
-	load_child_theme_textdomain( 'buntu' );
-
 }
 
 add_action( 'after_setup_theme', 'buntu_theme_setup', 20 );
@@ -63,8 +56,7 @@ add_action( 'after_setup_theme', 'buntu_theme_setup', 20 );
  * @return string Modified color.
  */
 function buntu_color_primary_default( $color ) {
-	$color = '230d5b';
-	return $color;
+	return $color ? $color : '230d5b';
 }
 
 add_filter( 'theme_mod_color_primary', 'buntu_color_primary_default' );
