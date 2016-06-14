@@ -19,8 +19,6 @@
 
 			<header <?php hybrid_attr( 'header' ); ?>>
 
-				<?php do_action( 'buntu_custom_logo' ); ?>
-
 				<?php if ( display_header_text() ) : // If user chooses to display header text. ?>
 
 					<div id="branding">

@@ -35,14 +35,6 @@ function buntu_theme_setup() {
 		'space-splatters',
 	) );
 
-	/*
-	 * Enable support for custom logo.
-	 */
-	add_theme_support( 'custom-logo', array(
-		'width'  => 100,
-		'height' => 100,
-	) );
-
 }
 
 add_action( 'after_setup_theme', 'buntu_theme_setup', 20 );
@@ -154,22 +146,3 @@ function buntu_custom_background_setup() {
 }
 
 add_action( 'after_setup_theme', 'buntu_custom_background_setup', 10 );
-
-if ( ! function_exists( 'buntu_the_custom_logo' ) ) :
-
-	/**
-	 * Render logo.
-	 *
-	 * @since 1.3
-	 */
-	function buntu_the_custom_logo() {
-
-		if ( function_exists( 'the_custom_logo' ) ) {
-			the_custom_logo();
-		}
-
-	}
-
-endif;
-
-add_action( 'buntu_custom_logo', 'buntu_the_custom_logo' );
