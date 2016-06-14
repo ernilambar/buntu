@@ -96,14 +96,11 @@ add_action( 'after_setup_theme', 'buntu_custom_header' );
  */
 function buntu_register_menus() {
 
-	register_nav_menu( 'primary',   _x( 'Primary',   'nav menu location', 'buntu' ) );
-	register_nav_menu( 'secondary', _x( 'Secondary', 'nav menu location', 'buntu' ) );
-	register_nav_menu( 'footer',    _x( 'Footer',    'nav menu location', 'buntu' ) );
-	register_nav_menu( 'social',    _x( 'Social',    'nav menu location', 'buntu' ) );
+	register_nav_menu( 'footer', _x( 'Footer', 'nav menu location', 'buntu' ) );
 
 }
 
-add_action( 'init', 'buntu_register_menus', 1 );
+add_action( 'init', 'buntu_register_menus', 11 );
 
 /**
  * Go to top.

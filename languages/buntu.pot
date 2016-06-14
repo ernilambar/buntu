@@ -40,7 +40,7 @@ msgstr ""
 msgid "Beautiful Model"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:112
 msgid "Go to top"
 msgstr ""
 
@@ -100,22 +100,7 @@ msgstr ""
 
 #: functions.php:99
 msgctxt "nav menu location"
-msgid "Primary"
-msgstr ""
-
-#: functions.php:100
-msgctxt "nav menu location"
-msgid "Secondary"
-msgstr ""
-
-#: functions.php:101
-msgctxt "nav menu location"
 msgid "Footer"
-msgstr ""
-
-#: functions.php:102
-msgctxt "nav menu location"
-msgid "Social"
 msgstr ""
 
 #: misc/loop-nav.php:20
