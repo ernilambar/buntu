@@ -40,8 +40,9 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 		 */
 		function __construct() {
 			$opts = array(
-				'classname'   => 'buntu_widget_social',
-				'description' => esc_html__( 'Social Icons Widget', 'buntu' ),
+				'classname'                   => 'buntu_widget_social',
+				'description'                 => esc_html__( 'Social Icons Widget', 'buntu' ),
+				'customize_selective_refresh' => true,
 			);
 			parent::__construct( 'buntu-social', esc_html__( 'Buntu: Social', 'buntu' ), $opts );
 		}
@@ -123,17 +124,13 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 			// Defaults.
 			$instance = wp_parse_args( (array) $instance, array(
 				'title' => '',
-				'size'  => '',
+				'size'  => 'medium',
 			) );
-			$title = esc_attr( $instance['title'] );
-			$size  = esc_attr( $instance['size'] );
+			$title = $instance['title'];
+			$size  = $instance['size'];
 
-			// Fetch navigation.
-			$nav_menu_locations = get_nav_menu_locations();
-			$is_menu_set = false;
-			if ( isset( $nav_menu_locations['social'] ) && absint( $nav_menu_locations['social'] ) > 0 ) {
-				$is_menu_set = true;
-			}
+			// Social menu status.
+			$is_menu_set = ( has_nav_menu( 'social' ) ) ? true : false;
 			?>
           <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'buntu' ); ?></label>
@@ -145,18 +142,17 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 			  $this->dropdown_size( array(
 				  'id'       => $this->get_field_id( 'size' ),
 				  'name'     => $this->get_field_name( 'size' ),
-				  'selected' => $size,
+				  'selected' => esc_attr( $size ),
 				  )
 			  );
 			?>
-
           </p>
 
-        <?php if ( true !== $is_menu_set ) :  ?>
-        <p>
-            <?php echo esc_html__( 'Social menu is not set. Please create menu and assign it to Social Menu.', 'buntu' ); ?>
-        </p>
-        <?php endif ?>
+        <?php if ( false === $is_menu_set ) : ?>
+	        <p>
+	            <?php echo esc_html__( 'Social menu is not set. Please create menu and assign it to Social menu.', 'buntu' ); ?>
+	        </p>
+        <?php endif; ?>
         <?php
 		}
 
