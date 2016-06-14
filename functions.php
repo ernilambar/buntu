@@ -14,7 +14,7 @@ function buntu_enqueue_styles() {
 
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.3', true );
+	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.4.0', true );
 
 }
 
@@ -63,18 +63,19 @@ function buntu_custom_header() {
 	add_theme_support(
 		'custom-header',
 		array(
-			'default-image'          => '%2$s/images/headers/beautiful-model.jpg',
-			'random-default'         => false,
-			'width'                  => 1175,
-			'height'                 => 400,
-			'flex-width'             => true,
-			'flex-height'            => true,
-			'default-text-color'     => '230d5b',
-			'header-text'            => true,
-			'uploads'                => true,
-			'wp-head-callback'       => 'stargazer_custom_header_wp_head',
+			'default-image'      => '%2$s/images/headers/beautiful-model.jpg',
+			'random-default'     => false,
+			'width'              => 1175,
+			'height'             => 400,
+			'flex-width'         => true,
+			'flex-height'        => true,
+			'default-text-color' => '230d5b',
+			'header-text'        => true,
+			'uploads'            => true,
+			'wp-head-callback'   => 'stargazer_custom_header_wp_head',
 		)
 	);
+
 	register_default_headers( array(
 		'beautiful-model' => array(
 			'url'           => '%2$s/images/headers/beautiful-model.jpg',
@@ -126,7 +127,6 @@ require get_stylesheet_directory() . '/inc/widgets.php';
  * Load Jetpack.
  */
 require get_stylesheet_directory() . '/inc/jetpack.php';
-
 
 /**
  * Adds support for the WordPress 'custom-background' theme feature.

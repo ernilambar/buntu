@@ -1,9 +1,8 @@
 === Buntu ===
 Contributors: rabmalin
-Tags: purple, white, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, left-sidebar, post-formats, responsive-layout, right-sidebar, rtl-language-support, theme-options, threaded-comments, translation-ready
 Requires at least: 4.3
-Tested up to: 4.5
-Stable tag: 1.3
+Tested up to: 4.5.2
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,17 +27,21 @@ Stargazer WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
-= 1.3 =
+= 1.4.0 =
+* Remove redundant loading of text domain
+* Minor bug fixes
+
+= 1.3.0 =
 * Add Custom Logo support
 * Minor styling issues
 
-= 1.2 =
+= 1.2.0 =
 * Update Theme URI
 * Minor styling issues
 
-= 1.1 =
+= 1.1.0 =
 * Update: Add default image
 * Update: Minor styling issues
 
-= 1.0 =
+= 1.0.0 =
 * Initial submission
