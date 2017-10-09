@@ -16,7 +16,6 @@ if ( ! function_exists( 'buntu_load_widgets' ) ) :
 
 		// Social widget.
 		register_widget( 'Buntu_Social_Widget' );
-
 	}
 
 endif;
@@ -65,32 +64,22 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 
 			// Render title.
 			if ( ! empty( $title ) ) {
-				echo $args['before_title'] . $title . $args['after_title'];
+				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 			}
 
-			$nav_menu_locations = get_nav_menu_locations();
-			$menu_id = 0;
-			if ( isset( $nav_menu_locations['social'] ) && absint( $nav_menu_locations['social'] ) > 0 ) {
-				$menu_id = absint( $nav_menu_locations['social'] );
+			if ( has_nav_menu( 'social' ) ) {
+				wp_nav_menu( array(
+					'theme_location' => 'social',
+					'container'      => false,
+					'menu_class'     => 'size-' . esc_attr( $size ),
+					'depth'          => 1,
+					'link_before'    => '<span class="screen-reader-text">',
+					'link_after'     => '</span>',
+					'item_spacing'   => 'discard',
+					) );
 			}
-			if ( $menu_id > 0 ) {
 
-				$menu_items = wp_get_nav_menu_items( $menu_id );
-
-				if ( ! empty( $menu_items ) ) {
-					echo '<ul class="size-' . esc_attr( $size ) . '">';
-					foreach ( $menu_items as $m_key => $m ) {
-						echo '<li>';
-						echo '<a href="' . esc_url( $m->url ) . '" target="_blank">';
-						echo '<span class="title screen-reader-text">' . esc_attr( $m->title ) . '</span>';
-						echo '</a>';
-						echo '</li>';
-					}
-					echo '</ul>';
-				}
-			}
 			echo $args['after_widget'];
-
 		}
 
 		/**

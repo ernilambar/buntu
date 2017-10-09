@@ -44,39 +44,39 @@ msgstr ""
 msgid "Go to top"
 msgstr ""
 
-#: inc/widgets.php:44
+#: inc/widgets.php:43
 msgid "Social Icons Widget"
 msgstr ""
 
-#: inc/widgets.php:47
+#: inc/widgets.php:46
 msgid "Buntu: Social"
 msgstr ""
 
-#: inc/widgets.php:136
+#: inc/widgets.php:125
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets.php:140
+#: inc/widgets.php:129
 msgid "Size:"
 msgstr ""
 
-#: inc/widgets.php:153
+#: inc/widgets.php:142
 msgid "Social menu is not set. Please create menu and assign it to Social menu."
 msgstr ""
 
-#: inc/widgets.php:179
+#: inc/widgets.php:168
 msgid "Small"
 msgstr ""
 
-#: inc/widgets.php:180
+#: inc/widgets.php:169
 msgid "Medium"
 msgstr ""
 
-#: inc/widgets.php:181
+#: inc/widgets.php:170
 msgid "Large"
 msgstr ""
 
-#: inc/widgets.php:182
+#: inc/widgets.php:171
 msgid "Extra Large"
 msgstr ""
 
