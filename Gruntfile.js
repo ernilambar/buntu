@@ -15,7 +15,7 @@ module.exports = function( grunt ){
 
 		// Other options.
 		options: {
-			text_domain: 'buntu'
+			text_domain: '<%= pkg.name %>'
 		},
 
 		// Generate POT files.
