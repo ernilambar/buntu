@@ -52,31 +52,31 @@ msgstr ""
 msgid "Buntu: Social"
 msgstr ""
 
-#: inc/widgets.php:125
+#: inc/widgets.php:122
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets.php:129
+#: inc/widgets.php:126
 msgid "Size:"
 msgstr ""
 
-#: inc/widgets.php:142
+#: inc/widgets.php:138
 msgid "Social menu is not set. Please create menu and assign it to Social menu."
 msgstr ""
 
-#: inc/widgets.php:168
+#: inc/widgets.php:162
 msgid "Small"
 msgstr ""
 
-#: inc/widgets.php:169
+#: inc/widgets.php:163
 msgid "Medium"
 msgstr ""
 
-#: inc/widgets.php:170
+#: inc/widgets.php:164
 msgid "Large"
 msgstr ""
 
-#: inc/widgets.php:171
+#: inc/widgets.php:165
 msgid "Extra Large"
 msgstr ""
 

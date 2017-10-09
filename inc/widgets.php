@@ -76,7 +76,7 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 					'link_before'    => '<span class="screen-reader-text">',
 					'link_after'     => '</span>',
 					'item_spacing'   => 'discard',
-					) );
+				) );
 			}
 
 			echo $args['after_widget'];
@@ -117,32 +117,26 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 			) );
 			$title = $instance['title'];
 			$size  = $instance['size'];
-
-			// Social menu status.
-			$is_menu_set = ( has_nav_menu( 'social' ) ) ? true : false;
 			?>
-          <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'buntu' ); ?></label>
-            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-          </p>
-          <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>"><?php esc_html_e( 'Size:', 'buntu' ); ?></label>
-            <?php
-			  $this->dropdown_size( array(
-				  'id'       => $this->get_field_id( 'size' ),
-				  'name'     => $this->get_field_name( 'size' ),
-				  'selected' => esc_attr( $size ),
-				  )
-			  );
-			?>
-          </p>
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'buntu' ); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			</p>
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>"><?php esc_html_e( 'Size:', 'buntu' ); ?></label>
+				<?php
+				$this->dropdown_size( array(
+					'id'       => $this->get_field_id( 'size' ),
+					'name'     => $this->get_field_name( 'size' ),
+					'selected' => esc_attr( $size ),
+					)
+				);
+				?>
+			</p>
 
-        <?php if ( false === $is_menu_set ) : ?>
-	        <p>
-	            <?php echo esc_html__( 'Social menu is not set. Please create menu and assign it to Social menu.', 'buntu' ); ?>
-	        </p>
-        <?php endif; ?>
-        <?php
+			<?php if ( false === has_nav_menu( 'social' ) ) : ?>
+				<p><?php esc_html_e( 'Social menu is not set. Please create menu and assign it to Social menu.', 'buntu' ); ?></p>
+			<?php endif;
 		}
 
 		/**
@@ -185,8 +179,8 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 			if ( $r['echo'] ) {
 				echo $output;
 			}
-			return $output;
 
+			return $output;
 		}
 	}
 
