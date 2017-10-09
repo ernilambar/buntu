@@ -14,7 +14,7 @@ function buntu_enqueue_styles() {
 
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.4.0', true );
+	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.5.0', true );
 
 }
 
@@ -81,7 +81,7 @@ function buntu_custom_header() {
 			'url'           => '%2$s/images/headers/beautiful-model.jpg',
 			'thumbnail_url' => '%2$s/images/headers/beautiful-model-thumb.jpg',
 			// Translators: Header image description.
-			'description'   => __( 'Beautiful Model', 'buntu' ),
+			'description'   => esc_html__( 'Beautiful Model', 'buntu' ),
 		),
 	) );
 
@@ -96,7 +96,7 @@ add_action( 'after_setup_theme', 'buntu_custom_header' );
  */
 function buntu_register_menus() {
 
-	register_nav_menu( 'footer', _x( 'Footer', 'nav menu location', 'buntu' ) );
+	register_nav_menu( 'footer', esc_html_x( 'Footer', 'nav menu location', 'buntu' ) );
 
 }
 
