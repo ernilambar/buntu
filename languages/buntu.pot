@@ -81,7 +81,7 @@ msgid "Extra Large"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://nilambar.net/2016/02/buntu-free-wordpress-theme.html"
+msgid "https://nilambar.net/2016/02/buntu-free-wordpress-theme.html"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -95,7 +95,7 @@ msgid "Nilambar Sharma"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://nilambar.net"
+msgid "https://nilambar.net/"
 msgstr ""
 
 #: functions.php:99

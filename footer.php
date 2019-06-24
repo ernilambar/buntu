@@ -28,7 +28,7 @@
 						printf(
 							' ' . __( '%1$s by %2$s.', 'buntu' ),
 							__( 'Buntu', 'buntu' ),
-							'<a href="' . esc_url( 'http://nilambar.net' ) . '" target="_blank">'. __( 'Nilambar', 'buntu' ) . '</a>'
+							'<a href="' . esc_url( 'https://nilambar.net' ) . '" target="_blank">'. __( 'Nilambar', 'buntu' ) . '</a>'
 						);
 					?>
                 </p><!-- .credit -->
