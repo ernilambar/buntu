@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer template.
+ * Footer template
  *
  * @package Buntu
  */
@@ -18,28 +18,30 @@
 
 			<div class="wrap">
 
-                <p class="credit">
-                    <?php
+				<p class="credit">
+					<?php
 						printf(
-							__( 'Copyright &#169; %1$s %2$s.', 'buntu' ),
+							esc_html__( 'Copyright &#169; %1$s %2$s.', 'buntu' ),
 							date_i18n( 'Y' ),
 							hybrid_get_site_link()
 						);
 						printf(
-							' ' . __( '%1$s by %2$s.', 'buntu' ),
-							__( 'Buntu', 'buntu' ),
-							'<a href="' . esc_url( 'https://nilambar.net' ) . '" target="_blank">'. __( 'Nilambar', 'buntu' ) . '</a>'
+							' ' . esc_html__( '%1$s by %2$s.', 'buntu' ),
+							esc_html__( 'Buntu', 'buntu' ),
+							'<a href="' . esc_url( 'https://nilambar.net' ) . '" target="_blank">' . esc_html__( 'Nilambar', 'buntu' ) . '</a>'
 						);
-					?>
-                </p><!-- .credit -->
-                <?php
-				wp_nav_menu( array(
-					'theme_location' => 'footer',
-					'container'      => 'nav',
-					'container_id'   => 'footer-navigation',
-					'depth'          => 1,
-					'fallback_cb'    => false,
-					) );
+						?>
+				</p><!-- .credit -->
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer',
+						'container'      => 'nav',
+						'container_id'   => 'footer-navigation',
+						'depth'          => 1,
+						'fallback_cb'    => false,
+					)
+				);
 				?>
 
 			</div><!-- .wrap -->
@@ -49,6 +51,5 @@
 	</div><!-- #container -->
 
 	<?php wp_footer(); // WordPress hook for loading JavaScript, toolbar, and other things in the footer. ?>
-
 </body>
 </html>

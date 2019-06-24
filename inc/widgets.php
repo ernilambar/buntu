@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme widgets.
+ * Theme widgets
  *
  * @package Buntu
  */
@@ -13,7 +13,6 @@ if ( ! function_exists( 'buntu_load_widgets' ) ) :
 	 * @since 1.0.0
 	 */
 	function buntu_load_widgets() {
-
 		// Social widget.
 		register_widget( 'Buntu_Social_Widget' );
 	}
@@ -56,7 +55,6 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 		 * @param array $instance The settings for the particular instance of the widget.
 		 */
 		function widget( $args, $instance ) {
-
 			$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 			$size  = ! empty( $instance['size'] ) ? $instance['size'] : 'medium';
 
@@ -68,15 +66,17 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 			}
 
 			if ( has_nav_menu( 'social' ) ) {
-				wp_nav_menu( array(
-					'theme_location' => 'social',
-					'container'      => false,
-					'menu_class'     => 'size-' . esc_attr( $size ),
-					'depth'          => 1,
-					'link_before'    => '<span class="screen-reader-text">',
-					'link_after'     => '</span>',
-					'item_spacing'   => 'discard',
-				) );
+				wp_nav_menu(
+					array(
+						'theme_location' => 'social',
+						'container'      => false,
+						'menu_class'     => 'size-' . esc_attr( $size ),
+						'depth'          => 1,
+						'link_before'    => '<span class="screen-reader-text">',
+						'link_after'     => '</span>',
+						'item_spacing'   => 'discard',
+					)
+				);
 			}
 
 			echo $args['after_widget'];
@@ -109,14 +109,16 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 		 * @param array $instance Current settings.
 		 */
 		function form( $instance ) {
-
 			// Defaults.
-			$instance = wp_parse_args( (array) $instance, array(
-				'title' => '',
-				'size'  => 'medium',
-			) );
-			$title = $instance['title'];
-			$size  = $instance['size'];
+			$instance = wp_parse_args(
+				(array) $instance,
+				array(
+					'title' => '',
+					'size'  => 'medium',
+				)
+			);
+			$title    = $instance['title'];
+			$size     = $instance['size'];
 			?>
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'buntu' ); ?></label>
@@ -125,10 +127,11 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>"><?php esc_html_e( 'Size:', 'buntu' ); ?></label>
 				<?php
-				$this->dropdown_size( array(
-					'id'       => $this->get_field_id( 'size' ),
-					'name'     => $this->get_field_name( 'size' ),
-					'selected' => esc_attr( $size ),
+				$this->dropdown_size(
+					array(
+						'id'       => $this->get_field_id( 'size' ),
+						'name'     => $this->get_field_name( 'size' ),
+						'selected' => esc_attr( $size ),
 					)
 				);
 				?>
@@ -136,7 +139,8 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 
 			<?php if ( false === has_nav_menu( 'social' ) ) : ?>
 				<p><?php esc_html_e( 'Social menu is not set. Please create menu and assign it to Social menu.', 'buntu' ); ?></p>
-			<?php endif;
+				<?php
+			endif;
 		}
 
 		/**
@@ -156,13 +160,14 @@ if ( ! class_exists( 'Buntu_Social_Widget' ) ) :
 			);
 
 			$r = wp_parse_args( $args, $defaults );
+
 			$output = '';
 
 			$choices = array(
-				'small'       => __( 'Small', 'buntu' ),
-				'medium'      => __( 'Medium', 'buntu' ),
-				'large'       => __( 'Large', 'buntu' ),
-				'extra-large' => __( 'Extra Large', 'buntu' ),
+				'small'       => esc_html__( 'Small', 'buntu' ),
+				'medium'      => esc_html__( 'Medium', 'buntu' ),
+				'large'       => esc_html__( 'Large', 'buntu' ),
+				'extra-large' => esc_html__( 'Extra Large', 'buntu' ),
 			);
 
 			if ( ! empty( $choices ) ) {

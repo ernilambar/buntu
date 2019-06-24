@@ -11,11 +11,9 @@
  * @since 1.0.0
  */
 function buntu_enqueue_styles() {
-
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.6.0', true );
-
 }
 
 add_action( 'wp_enqueue_scripts', 'buntu_enqueue_styles' );
@@ -26,15 +24,15 @@ add_action( 'wp_enqueue_scripts', 'buntu_enqueue_styles' );
  * @since 1.0.0
  */
 function buntu_theme_setup() {
-
-	unregister_default_headers( array(
-		'horizon',
-		'orange-burn',
-		'planets-blue',
-		'planet-burst',
-		'space-splatters',
-	) );
-
+	unregister_default_headers(
+		array(
+			'horizon',
+			'orange-burn',
+			'planets-blue',
+			'planet-burst',
+			'space-splatters',
+		)
+	);
 }
 
 add_action( 'after_setup_theme', 'buntu_theme_setup', 20 );
@@ -59,7 +57,6 @@ add_filter( 'theme_mod_color_primary', 'buntu_color_primary_default' );
  * @since 1.0.0
  */
 function buntu_custom_header() {
-
 	add_theme_support(
 		'custom-header',
 		array(
@@ -76,15 +73,16 @@ function buntu_custom_header() {
 		)
 	);
 
-	register_default_headers( array(
-		'beautiful-model' => array(
-			'url'           => '%2$s/images/headers/beautiful-model.jpg',
-			'thumbnail_url' => '%2$s/images/headers/beautiful-model-thumb.jpg',
-			// Translators: Header image description.
-			'description'   => esc_html__( 'Beautiful Model', 'buntu' ),
-		),
-	) );
-
+	register_default_headers(
+		array(
+			'beautiful-model' => array(
+				'url'           => '%2$s/images/headers/beautiful-model.jpg',
+				'thumbnail_url' => '%2$s/images/headers/beautiful-model-thumb.jpg',
+				// Translators: Header image description.
+				'description'   => esc_html__( 'Beautiful Model', 'buntu' ),
+			),
+		)
+	);
 }
 
 add_action( 'after_setup_theme', 'buntu_custom_header' );
@@ -95,9 +93,7 @@ add_action( 'after_setup_theme', 'buntu_custom_header' );
  * @since 1.0.0
  */
 function buntu_register_menus() {
-
 	register_nav_menu( 'footer', esc_html_x( 'Footer', 'nav menu location', 'buntu' ) );
-
 }
 
 add_action( 'init', 'buntu_register_menus', 11 );
@@ -108,9 +104,7 @@ add_action( 'init', 'buntu_register_menus', 11 );
  * @since 1.0.0
  */
 function buntu_add_goto_top() {
-
 	echo '<a href="#container" class="scrollup" id="btn-scrollup"><span class="screen-reader-text">' . esc_html__( 'Go to top', 'buntu' ) . '</span></a>';
-
 }
 
 add_action( 'wp_footer', 'buntu_add_goto_top' );
@@ -131,7 +125,6 @@ require get_stylesheet_directory() . '/inc/jetpack.php';
  * @since 1.0.0
  */
 function buntu_custom_background_setup() {
-
 	add_theme_support(
 		'custom-background',
 		array(

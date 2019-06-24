@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for loop navigation.
+ * Template part for loop navigation
  *
  * @package Buntu
  */
@@ -15,11 +15,13 @@
 
 <?php elseif ( is_home() || is_archive() || is_search() ) : // If viewing the blog, an archive, or search results. ?>
 
-	<?php the_posts_pagination(
-	array(
+	<?php
+	the_posts_pagination(
+		array(
 			'prev_text' => _x( '&larr; Previous', 'posts navigation', 'buntu' ),
-			'next_text' => _x( 'Next &rarr;',     'posts navigation', 'buntu' ),
+			'next_text' => _x( 'Next &rarr;', 'posts navigation', 'buntu' ),
 		)
-); ?>
+	);
+	?>
 
 <?php endif; // End check for type of page being viewed. ?>

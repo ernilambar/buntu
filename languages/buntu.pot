@@ -35,48 +35,48 @@ msgstr ""
 msgid "Nilambar"
 msgstr ""
 
-#: functions.php:84
+#: functions.php:82
 #. Translators: Header image description.
 msgid "Beautiful Model"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:107
 msgid "Go to top"
 msgstr ""
 
-#: inc/widgets.php:43
+#: inc/widgets.php:42
 msgid "Social Icons Widget"
 msgstr ""
 
-#: inc/widgets.php:46
+#: inc/widgets.php:45
 msgid "Buntu: Social"
 msgstr ""
 
-#: inc/widgets.php:122
+#: inc/widgets.php:124
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets.php:126
+#: inc/widgets.php:128
 msgid "Size:"
 msgstr ""
 
-#: inc/widgets.php:138
+#: inc/widgets.php:141
 msgid "Social menu is not set. Please create menu and assign it to Social menu."
 msgstr ""
 
-#: inc/widgets.php:162
+#: inc/widgets.php:167
 msgid "Small"
 msgstr ""
 
-#: inc/widgets.php:163
+#: inc/widgets.php:168
 msgid "Medium"
 msgstr ""
 
-#: inc/widgets.php:164
+#: inc/widgets.php:169
 msgid "Large"
 msgstr ""
 
-#: inc/widgets.php:165
+#: inc/widgets.php:170
 msgid "Extra Large"
 msgstr ""
 
@@ -98,17 +98,17 @@ msgstr ""
 msgid "https://nilambar.net/"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:96
 msgctxt "nav menu location"
 msgid "Footer"
 msgstr ""
 
-#: misc/loop-nav.php:20
+#: misc/loop-nav.php:21
 msgctxt "posts navigation"
 msgid "&larr; Previous"
 msgstr ""
 
-#: misc/loop-nav.php:21
+#: misc/loop-nav.php:22
 msgctxt "posts navigation"
 msgid "Next &rarr;"
 msgstr ""
