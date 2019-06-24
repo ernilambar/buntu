@@ -1,8 +1,9 @@
 === Buntu ===
 Contributors: rabmalin
-Requires at least: 4.7
-Tested up to: 4.9
-Stable tag: 1.5.0
+Requires at least: 5.0
+Requires PHP: 5.6
+Tested up to: 5.2
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +27,10 @@ Stargazer WordPress Theme is distributed under the terms of the GNU GPL
 * CCO - https://pixabay.com/en/texture-color-colorful-background-746882/
 
 == Changelog ==
+
+= 1.6.0 =
+* WP 5.2 compatibility
+* Minor bug fixes
 
 = 1.5.0 =
 * WP 4.9 compatibility
