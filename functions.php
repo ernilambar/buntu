@@ -14,7 +14,7 @@ function buntu_enqueue_styles() {
 
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.5.0', true );
+	wp_enqueue_script( 'buntu-custom', get_stylesheet_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.6.0', true );
 
 }
 
